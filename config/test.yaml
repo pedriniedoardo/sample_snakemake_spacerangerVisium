@@ -1,0 +1,14 @@
+# sample declaration
+samples_test:
+  test1:
+    param1: '-n'
+    value1: '5'
+  test2:
+    param1: '-n'
+    value1: '10'
+  test3:
+    param1: '-n'
+    value1: '20'
+  test4:
+    param1: ''
+    value1: ''

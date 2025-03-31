@@ -1,0 +1,13 @@
+# define the configfiles
+configfile: 'config/test.yaml'
+configfile: 'config/config.yaml'
+configfile: 'config/sample.yaml'
+
+# include the rules
+include: 'rules/test.smk'
+include: 'rules/spaceranger.smk'
+
+# ask for all the samples
+rule all:
+    input:
+        expand(rules.spaceranger.output.flag,sample=config['samples'])

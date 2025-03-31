@@ -1,0 +1,26 @@
+# sample declaration
+samples:
+  human_brain_FF_HE:
+    param_img: '--image='
+    value_img: 'data/human_brain_FF_HE/image/human_brain_FF_HE.tif'
+    param_align: ''
+    value_align: ''
+    param_probe: ''
+    value_probe: ''
+    param_slide: '--slide='
+    value_slide: 'V11S13-399'
+    param_area: '--area='
+    value_area: 'A1'
+    param_noBAM: '--no-bam'
+  human_brain_FF_HE2:
+    param_img: '--image='
+    value_img: 'data/human_brain_FF_HE2/image/human_brain_FF_HE.tif'
+    param_align: ''
+    value_align: ''
+    param_probe: ''
+    value_probe: ''
+    param_slide: '--slide='
+    value_slide: 'V11S13-399'
+    param_area: '--area='
+    value_area: 'A1'
+    param_noBAM: '--no-bam'

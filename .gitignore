@@ -1,0 +1,12 @@
+# files
+_*
+chnk*
+fork*
+*.mro
+
+# folders
+.snakemake/
+output/
+logs/
+benchmarks/
+data/
