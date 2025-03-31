@@ -8,5 +8,5 @@ fork*
 .snakemake/
 output/
 logs/
-benchmarks/
 data/
+benchmarks/
