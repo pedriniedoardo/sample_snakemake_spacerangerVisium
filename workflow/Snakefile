@@ -5,9 +5,26 @@ configfile: 'config/sample.yaml'
 
 # include the rules
 include: 'rules/test.smk'
-include: 'rules/spaceranger.smk'
+include: 'rules/spaceranger_processing.smk'
 
 # ask for all the samples
-rule all:
+rule spaceranger_minimal:
+    '''
+    rule to run the default analysis using cellranger.
+    '''
     input:
-        expand(rules.spaceranger.output.flag,sample=config['samples'])
+        expand(rules.runSpaceranger.output.output,sample=config['SAMPLES'])
+
+# default rule to run the cellranger pipeline
+rule spaceranger_default:
+    '''
+    rule to run the default analysis using spaceranger.
+    '''
+    input:
+        expand(rules.moveSpacerangerSummary.output.summary, sample=config['SAMPLES']),
+        rules.runMultiqc1.output.html
+
+
+rule test_all:
+    input:
+        rules.test.output.test

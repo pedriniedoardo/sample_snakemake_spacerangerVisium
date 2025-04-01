@@ -1,2 +1,2 @@
 # test spaceranger
-snakemake --use-conda --cores 8 -nrp results/spaceranger/human_brain_FF_HE.stamp
+snakemake --sdm conda -p -c16 --wms-monitor http://127.0.0.1:5000 spaceranger_default

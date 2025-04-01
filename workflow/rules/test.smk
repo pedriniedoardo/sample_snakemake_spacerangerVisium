@@ -1,39 +1,28 @@
-# this is not working
-# rule test_sample:
-#     input:
-#         inp = 'data/input.txt'
-#     output:
-#         out = 'results/{test}.txt'
-#     conda:'bioinfo'
-#     log: 'logs/{test}.log'
-#     benchmark:'benchmarks/{test}.txt'
-#     params:
-#         flag = config['samples']['test1']['param1'],
-#         n = config['samples']['test1']['value1']
-#     resources:
-#         cpus = 1
-#     threads: 1
-#     shell:
-#         '''
-#         head {params.flag} {params.n} {input} >> {output}
-#         '''
-
-# this is working
-rule test_sample:
+# ---------------------------------------------------------------------------- #
+rule test:
+    '''
+    This is a test rule
+    '''
     input:
-        inp = 'data/input.txt'
+        test = config['test01']
+    conda:
+        config['env_spaceranger']
     output:
-        out = 'results/{test}.txt'
-    conda:'bioinfo'
-    log: 'logs/{test}.log'
-    benchmark:'benchmarks/{test}.txt'
-    params:
-        flag = lambda w: config["samples_test"]["{}".format(w.test)]['param1'],
-        n = lambda w: config["samples_test"]["{}".format(w.test)]['value1']
+        test = config['test_out']
+    log:
+        'logs/test/test.log'
+    benchmark:
+        'benchmarks/test/test.txt'
     resources:
+        mem_mb = 500,
         cpus = 1
     threads: 1
+    params:
+        annotations = config['test02']
     shell:
         '''
-        head {params.flag} {params.n} {input} >> {output}
+        echo "run the test" > {log}
+        cat {input.test} > {output.test}
+        cat {params.annotations} | awk 'NR<=10' >> {output.test}
+        echo "test done" >> {log}
         '''

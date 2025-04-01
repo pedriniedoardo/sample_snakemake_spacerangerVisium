@@ -1,14 +1,6 @@
-# sample declaration
-samples_test:
-  test1:
-    param1: '-n'
-    value1: '5'
-  test2:
-    param1: '-n'
-    value1: '10'
-  test3:
-    param1: '-n'
-    value1: '20'
-  test4:
-    param1: ''
-    value1: ''
+# Configuration options of cellranger pipeline for the 10X scRNAseq data
+
+# test parameters
+test01: 'resources/test01.txt'
+test02: 'resources/test02.txt'
+test_out: 'resources/test_out.txt'

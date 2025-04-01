@@ -1,3 +1,19 @@
-# reference
-reference_human: '/home/edo/Documents/reference/trascriptome/refdata-gex-GRCh38-2020-A'
-reference_mouse: '/home/edo/Documents/reference/trascriptome/refdata-gex-mm10-2020-A'
+# parameters cellranger
+# specify the cellranger verions from the conda
+# env_cellranger: '/home/edo/micromamba/envs/env_cellranger7' 
+env_spaceranger: 'env_spaceranger3'
+env_bioinfo: 'bioinfo'
+# env_cellranger: 'env_cellranger6.1'
+
+# local test
+# transcriptome: '/home/edo/Documents/reference/spaceranger/reference/spaceranger_tinyref'
+transcriptome: '/home/edo/Documents/reference/spaceranger/reference/refdata-gex-GRCh38-2020-A'
+
+# specify the run parameters
+BAM_param: '--create-bam='
+BAM_flag: 'true'
+
+spaceranger_cpus: 8
+spaceranger_mem_gb: 64
+
+out_location: "output/"

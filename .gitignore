@@ -3,6 +3,7 @@ _*
 chnk*
 fork*
 *.mro
+.panoptes.db
 
 # folders
 .snakemake/
